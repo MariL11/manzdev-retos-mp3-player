@@ -1,3 +1,10 @@
+@font-face {
+    font-family: RobotoFlex;
+    src: url(./fonts/RobotoFlex-VariableFont_GRAD\,XOPQ\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +17,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: RobotoFlex, sans-serif;
 }
 
 .mp3-player-container{
@@ -20,38 +28,122 @@ body{
 }
 
 .mp3-player{
-    border: 2px solid black;
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 1px 1px 9px 0px #686470;
 }
 
 .art-box{
     width: 350px;
     height: 350px;
-    border: 2px solid black;
-    background-color: rgb(90, 55, 10);
+    position: relative;
+}
+
+.list{
+    position: absolute; 
+    top: 1.5rem; 
+    right: 26.5rem;
+    z-index: 1;
+}
+
+.list > svg{
+    left:25rem;
+    width: 20px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
 
 .controls-box{
     width: 350px;
-    height: 250px;
-    border: 2px solid black;
-    background-color: rgb(171, 233, 238);
+    height: 210px;
+    background-color: white;
+}
+
+.data{
+    text-align: center;
+    margin-block: 2.5rem;
+    margin-inline: 1rem;
+}
+
+.title{
+    font-size:x-large;
+    margin-bottom: 0.5rem;
+}
+
+.artist{
+    font-weight: 400;
+    color:#74707c;
+    font-size: small;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.controls > svg{
+    width: 1rem;
 }
 
 .status-box{
     width: 350px;
-    height: 150px;
-    border: 2px solid black;
-    background-color: rgb(189, 138, 71);
+    height: 80px;
+    background-color: #ececf3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-box > p{
+    color:  #411583;
+    font-weight: 500;
+    font-size: smaller;
+    margin-inline: 5rem;
 }
 
 .playlist{
-    width: 275px;
-    height: 275px;
+    width: 330px;
+    height: 175px;
     margin-top: 5%;
-    border: 2px solid black;
-    background-color: aqua;
+    background-color:  #ececf3;
+    box-shadow: 1px 1px 9px 0px #74707c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.songs{
+    color: #74707c;
+    font-size:medium;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding-block: 0.4rem;
+    border-bottom: 1px solid #d2d0d8;
+    font-weight: 300;
+    padding-inline: 0.3rem;
+}
+
+li:hover{
+    background-color:#d2d0d8;
+    color: black;
+    cursor: pointer;
 }
