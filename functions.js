@@ -46,18 +46,13 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Complete petition");
         });
 
-        /* PRUEBA
+        /* PRUEBA AUDIO
         
         const audio = new Audio("https://manzdev.github.io/codevember2017/assets/eye-tiger.mp3");
-        audio.volume = 0.5; 
         play = document.getElementById('play');
         play.addEventListener("click", function() {
              
             if(sound){
-                console.log(audio.paused);        // true (no se está reproduciendo)
-                console.log(audio.currentTime);   // 0
-                console.log(audio.duration);      // 17.81551 (17 secs, 815.51 ms)
-                audio.currentTime = 5;            // Move to 5 secs
                 audio.play(); 
 
                 sound=false;
