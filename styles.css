@@ -32,6 +32,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 1px 1px 9px 0px #686470;
+    z-index: 1;
 }
 
 .art-box{
@@ -42,18 +43,40 @@ body{
 
 .list{
     position: absolute; 
-    top: 1.5rem; 
-    right: 26.5rem;
+    left:18.5rem;
+    top:1.5rem;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    height: 12%;
 }
 
 .list > svg{
-    left:25rem;
-    width: 20px;
+    width: 22px;
     position: relative;
     z-index: 2;
-
+    cursor: pointer;
 }
+
+.list:hover{
+    background-color: #0f0f0f67;
+}
+
+
+.times{
+    width: 350px;
+    height: 30px;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 1;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    gap:10rem;
+}
+
 
 .image{
     width: 100%;
@@ -92,8 +115,16 @@ body{
     gap: 2rem;
 }
 
-.controls > svg{
+
+.controls > svg {
     width: 1rem;
+    cursor: pointer;
+}
+
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important; 
 }
 
 .status-box{
@@ -136,6 +167,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.5s ease; 
 }
 
 .songs{
@@ -158,9 +190,5 @@ li:hover{
     background-color:#d2d0d8;
     color: black;
     cursor: pointer;
-}
-
-.disabled {
-    opacity: 0.5;         
 }
 

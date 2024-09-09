@@ -6,7 +6,10 @@ let musicArtist;
 let musicImage;
 let musicAudio
 
+let iconPlaylist;
+let playlist;
 let listSongs;
+let displayed = false;
 
 let musicIcon;
 const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`;
@@ -20,6 +23,8 @@ let nextMusic;
 let sound=true;
 
 let progressBar;
+let musicTime;
+let durationSong;
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -51,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
         nextMusic =  document.querySelector('#next');
         prevMusic =  document.querySelector('#prev');
 
+        iconPlaylist = document.querySelector('.list');
+
         progressBar =  document.querySelector('.progress-bar');
 
         function updateSongDetails (){
@@ -67,6 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
             audio = new Audio(musicAudio);
 
             audio.addEventListener('ended', songEnd);
+
+           
+            audio.addEventListener('loadedmetadata', () => {
+                durationSong = document.querySelector('.duration');
+                durationSong.innerHTML = `${Math.floor(audio.duration / 60)}:${Math.floor(audio.duration % 60)}`;
+            });
 
             let information = '<ul>';
             let countSongs = 1;
@@ -136,11 +149,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         prevMusic.addEventListener("click", prevSong);
 
+        function formatTime(seconds) {
+            let minutes = Math.floor(seconds / 60);
+            let secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
 
         function updateProgress() {
             if (audio) {
                 let percentage = (audio.currentTime / audio.duration) * 100;
                 progressBar.style.width = `${percentage}%`;
+
+                musicTime = document.querySelector('.music-time');
+                musicTime.innerHTML = formatTime(audio.currentTime);
+
             }
         }
 
@@ -165,6 +187,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        
+        function activePlaylist(){
 
+            playlist = document.querySelector(".playlist");
+
+            if(!displayed){
+                playlist.style.transform = 'translateX(-340px)';
+                displayed = true;
+            }else{
+                playlist.style.transform = 'translateX(-0px)';
+                displayed = false;
+            }
+           
+
+        }
+
+        iconPlaylist.addEventListener("click", activePlaylist);
 });
