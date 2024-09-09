@@ -114,6 +114,18 @@ body{
     margin-inline: 5rem;
 }
 
+.bar{
+    width: 350px;
+    height: 10px;
+    background-color: grey;
+}
+
+.progress-bar{
+    width: 0px;
+    height: 10px;
+    background-color: #411583;
+}
+
 .playlist{
     width: 330px;
     height: 175px;
@@ -147,3 +159,8 @@ li:hover{
     color: black;
     cursor: pointer;
 }
+
+.disabled {
+    opacity: 0.5;         
+}
+
