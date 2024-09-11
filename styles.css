@@ -91,6 +91,7 @@ body{
     bottom: 0rem;
     z-index: 1;
     opacity: 0.4;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 65%, rgba(0, 0, 0, 1) 85%);
 }
 
 
