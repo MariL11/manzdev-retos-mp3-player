@@ -87,8 +87,8 @@ body{
 .volumen {
     width: 21.8rem;
     height: 3.4rem;
-    position: absolute;
-    bottom: 0rem;
+    position: relative;
+    bottom: 3.65rem;
     z-index: 1;
     opacity: 0.4;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 65%, rgba(0, 0, 0, 1) 85%);
