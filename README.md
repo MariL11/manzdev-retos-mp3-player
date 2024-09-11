@@ -9,4 +9,4 @@ Este pequeño reto consiste en desarrollar un reproductor MP3 con HTML, CSS y Ja
 - 5️⃣ La barra inferior marca el progreso de la canción. Al pulsar sobre ella, se saltará al segundo exacto.
 - 6️⃣ En la zona inferior del art-box aparecerá el momento de reproducción actual y la duración.
 - 7️⃣ Abajo, existirá un medidor de volumen animado «fake», cuando reproduce una canción.
--8️⃣ Un botón desplegará la lista de canciones, que permiten saltar a la canción en cuestión.
+- 8️⃣ Un botón desplegará la lista de canciones, que permiten saltar a la canción en cuestión.
